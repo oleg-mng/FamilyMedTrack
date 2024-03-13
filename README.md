@@ -1,11 +1,12 @@
-# Java web application
-## java version 17
-## springframework.boot version 3.2.3
+## java web application
+- Application for managing family medical data
+## Java version 17
+## SpringBoot version 3.2.3
 
 
-## Integration with Swagger UI
+## integration with Swagger UI
 http://localhost:8080/swagger-ui/index.html
 
 
-## OpenAPI
+## openAPI
 http://localhost:8080/v3/api-docs
