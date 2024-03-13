@@ -1,7 +1,9 @@
 package com.olegmng.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 @Data
 @Entity
@@ -17,4 +19,12 @@ public class Patient {
 
     @Column(name = "password")
     private String password;
+
+    public Patient() {
+    }
+
+    public Patient(String login, String password) {
+        this.login = login;
+        this.password = password;
+    }
 }
