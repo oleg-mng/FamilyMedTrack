@@ -2,6 +2,8 @@ package com.olegmng.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -11,13 +13,13 @@ public class Report {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long report_id;
 
     @Column(name = "type")
     private String type;
 
     @Column(name = "date")
-    private LocalDateTime date;
+    private LocalDate date;
 
     @Column(name = "scan")
     private String scan;
@@ -27,4 +29,15 @@ public class Report {
 
     @Column(name = "doctor_id")
     private Long doctor_id;
+
+    public Report() {
+    }
+
+    public Report(String type, LocalDate date, String scan, Long patient_id, Long doctor_id) {
+        this.type = type;
+        this.date = date;
+        this.scan = scan;
+        this.patient_id = patient_id;
+        this.doctor_id = doctor_id;
+    }
 }

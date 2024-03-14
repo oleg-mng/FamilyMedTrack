@@ -1,9 +1,7 @@
 package com.olegmng.service;
 
 import com.olegmng.entity.Doctor;
-import com.olegmng.entity.Patient;
 import com.olegmng.repository.DoctorRepository;
-import com.olegmng.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
