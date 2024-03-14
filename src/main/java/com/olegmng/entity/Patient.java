@@ -1,9 +1,7 @@
 package com.olegmng.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
 
 @Data
 @Entity
@@ -12,7 +10,7 @@ public class Patient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long patient_id;
 
     @Column(name = "login")
     private String login;

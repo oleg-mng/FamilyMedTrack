@@ -18,4 +18,13 @@ public class Report {
 
     @Column(name = "date")
     private LocalDateTime date;
+
+    @Column(name = "scan")
+    private String scan;
+
+    @Column(name = "patient_id")
+    private Long patient_id;
+
+    @Column(name = "doctor_id")
+    private Long doctor_id;
 }

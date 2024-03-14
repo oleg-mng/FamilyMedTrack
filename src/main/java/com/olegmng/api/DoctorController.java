@@ -1,6 +1,9 @@
 package com.olegmng.api;
 
+
+import com.olegmng.entity.Doctor;
 import com.olegmng.entity.Patient;
+import com.olegmng.service.DoctorService;
 import com.olegmng.service.PatientService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -13,17 +16,17 @@ import java.util.List;
 
 @Slf4j
 @RestController
-@RequestMapping("/patient")
-@Tag(name = "Patient")
-public class PatientController {
+@RequestMapping("/doctor")
+@Tag(name = "Doctor")
+public class DoctorController {
 
     @Autowired
-    private PatientService patientService;
+    private DoctorService doctorService;
 
     @GetMapping
     @Operation(summary = "Get all patients", description = "Getting all available patients in the system")
-    public List<Patient> getAllPatient() {
+    public List<Doctor> getAllDoctors() {
 
-        return patientService.getAllPatients();
+        return doctorService.getAllDoctors();
     }
 }

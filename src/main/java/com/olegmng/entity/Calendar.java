@@ -2,8 +2,6 @@ package com.olegmng.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
-
-import javax.print.Doc;
 import java.time.LocalDateTime;
 
 @Data
@@ -18,9 +16,9 @@ public class Calendar {
     @Column(name = "date")
     private LocalDateTime date;
 
-    @Column(name = "doctor")
-    private String doctor;
+    @Column(name = "patient_id")
+    private String patient_id;
 
-    @Column(name = "patient")
-    private String patient;
+    @Column(name = "doctor_id")
+    private String doctor_id;
 }
