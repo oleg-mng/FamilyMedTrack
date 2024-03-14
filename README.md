@@ -7,6 +7,8 @@
 - Docker (to start db)
 
 ## integration with Swagger UI
+`environment`
+
 http://localhost:8080/swagger-ui/index.html
 
 ## openAPI
