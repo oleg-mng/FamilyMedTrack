@@ -27,4 +27,10 @@ public class DoctorController {
 
         return doctorService.getAllDoctors();
     }
+
+    @PostMapping
+    @Operation(summary = "Add new doctor", description = "Adding new doctor in system")
+    public List<Doctor> addReport(@RequestBody Doctor doctor) {
+        return doctorService.saveDoctor(doctor);
+    }
 }
