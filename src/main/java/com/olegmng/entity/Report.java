@@ -27,6 +27,10 @@ public class Report {
     @Column(name = "patient_id")
     private Long patient_id;
 
+    @ManyToOne
+    @JoinColumn(name="patient_id", referencedColumnName="patient_id")
+    private Patient patient;
+
     @Column(name = "doctor_id")
     private Long doctor_id;
 
