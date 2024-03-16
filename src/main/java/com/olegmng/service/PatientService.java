@@ -1,10 +1,12 @@
 package com.olegmng.service;
 
+import com.olegmng.entity.Doctor;
 import com.olegmng.entity.Patient;
 import com.olegmng.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -20,5 +22,15 @@ public class PatientService {
         patientRepository.save(new Patient("Oleg", "p4"));
 
         return patientRepository.findAll();
+    }
+
+    public List<Patient> savePatient(Patient patient){
+        patientRepository.save(new Patient(
+                patient.getLogin(), patient.getPassword()));
+
+        return patientRepository.findAll();
+    }
+    public Optional<Patient> getPatientById(Long id){
+        return patientRepository.findById(id);
     }
 }
