@@ -1,12 +1,10 @@
 package com.olegmng.service;
 
 import com.olegmng.entity.Doctor;
-import com.olegmng.entity.Report;
 import com.olegmng.repository.DoctorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.print.Doc;
 import java.util.List;
 import java.util.Optional;
 
