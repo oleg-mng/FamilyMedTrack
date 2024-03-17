@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Current Calendar</title>
+</head>
+<body>
+<h1>Calendar</h1>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Date</th>
+        <th>Patient_id</th>
+        <th>Doctor_id</th>
+    </tr>
+    <tr th:each="calendar: ${calendars}">
+        <td th:text="${calendar.id}"></td>
+        <td th:text="${calendar.date}"></td>
+        <td th:text="${calendar.patient_id}"></td>
+        <td th:text="${calendar.doctor_id}"></td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>Patients</title>
+</head>
+<body>
+<h1>Patients:</h1>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Login</th>
+    </tr>
+    <tr th:each="patient: ${patients}">
+        <td th:text="${patient.patient_id}"></td>
+        <td th:text="${patient.login}"></td>
+    </tr>
+</table>
+</body>
+</html>
