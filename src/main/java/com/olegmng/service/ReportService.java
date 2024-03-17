@@ -45,4 +45,8 @@ public class ReportService {
     public Optional<Report> getReportByPatientId(Long id){
         return reportRepository.findById(id);
     }
+
+    public String getTypeReportById(Long id) {
+        return reportRepository.findTypeReportById(id);
+    }
 }

@@ -46,9 +46,11 @@ public class ReportController {
         return reportService.deleteReportById(id);
     }
 
-//    @GetMapping("/patient/{id}")
-//    @Operation(summary = "Get reports by patient_id", description = "Getting available reports by patient_id in the system")
-//    public List<Report> getReportByPatientId(@PathVariable Long id) {
-//        return reportService.getReportByPatientId(id);
-//    }
+    @GetMapping("/gettype/{id}")
+    @Operation(summary = "Get type by id", description = "Getting available type by id in the system")
+    public String getTypeReportById(@PathVariable Long id) {
+        return reportService.getTypeReportById(id);
+    }
+
+
 }
