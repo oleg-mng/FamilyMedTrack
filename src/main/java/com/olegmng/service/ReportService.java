@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -39,5 +40,9 @@ public class ReportService {
     public List<Report> deleteReportById(Long id) {
         reportRepository.deleteById(id);
         return reportRepository.findAll();
+    }
+
+    public List<Report> getReportByPatientId(Long id){
+        return reportRepository.findAllById(Collections.singleton(id));
     }
 }

@@ -1,5 +1,6 @@
 package com.olegmng.api;
 
+import com.olegmng.dto.ReportDTO;
 import com.olegmng.entity.Report;
 import com.olegmng.service.ReportService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -23,7 +24,7 @@ public class ReportController {
 
     @GetMapping
     @Operation(summary = "Get all reports", description = "Getting all available reports in the system")
-    public List<Report> getAllDoctors() {
+    public List<Report> getAllReports() {
         return reportService.getAllReports();
     }
 
@@ -43,5 +44,11 @@ public class ReportController {
     @Operation(summary = "Delete report by id", description = "Getting available report by id in the system")
     public List<Report> deleteReportById(@PathVariable Long id) {
         return reportService.deleteReportById(id);
+    }
+
+    @GetMapping("/patient/{id}")
+    @Operation(summary = "Get reports by patient_id", description = "Getting available reports by patient_id in the system")
+    public List<Report> getReportByPatientId(@PathVariable Long id) {
+        return reportService.getReportByPatientId(id);
     }
 }

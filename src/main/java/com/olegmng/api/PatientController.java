@@ -1,5 +1,6 @@
 package com.olegmng.api;
 
+import com.olegmng.dto.PatientDTO;
 import com.olegmng.entity.Patient;
 import com.olegmng.entity.Report;
 import com.olegmng.service.PatientService;

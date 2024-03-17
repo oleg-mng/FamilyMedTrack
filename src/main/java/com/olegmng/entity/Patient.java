@@ -15,10 +15,13 @@ public class Patient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long patient_id;
 
-    @OneToMany
-    @JoinColumn(name="patient_id", referencedColumnName="patient_id")
+    @OneToMany(targetEntity = Report.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "patient_id", referencedColumnName = "patient_id")
     private List<Report> reportList = new ArrayList<>();
 
+//    @OneToMany
+//    @JoinColumn(name="patient_id", referencedColumnName="patient_id")
+//    private List<Report> reportList = new ArrayList<>();
 
     @Column(name = "login")
     private String login;

@@ -1,6 +1,6 @@
 package com.olegmng.service;
 
-import com.olegmng.entity.Doctor;
+import com.olegmng.dto.PatientDTO;
 import com.olegmng.entity.Patient;
 import com.olegmng.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;

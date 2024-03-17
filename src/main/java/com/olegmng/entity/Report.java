@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -27,9 +26,9 @@ public class Report {
     @Column(name = "patient_id")
     private Long patient_id;
 
-    @ManyToOne
-    @JoinColumn(name="patient_id", referencedColumnName="patient_id")
-    private Patient patient;
+//    @ManyToOne
+//    @JoinColumn(name="patient_id", referencedColumnName="patient_id", insertable=false, updatable=false)
+//    private Patient patient;
 
     @Column(name = "doctor_id")
     private Long doctor_id;
