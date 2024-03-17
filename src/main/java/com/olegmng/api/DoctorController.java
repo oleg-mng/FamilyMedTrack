@@ -1,6 +1,7 @@
 package com.olegmng.api;
 
 
+import com.olegmng.dto.DoctorDTO;
 import com.olegmng.entity.Doctor;
 import com.olegmng.entity.Report;
 import com.olegmng.service.DoctorService;
@@ -31,7 +32,7 @@ public class DoctorController {
 
     @PostMapping
     @Operation(summary = "Add new doctor", description = "Adding new doctor in system")
-    public List<Doctor> addReport(@RequestBody Doctor doctor) {
+    public List<Doctor> addReport(@RequestBody DoctorDTO doctor) {
         return doctorService.saveDoctor(doctor);
     }
 

@@ -1,5 +1,6 @@
 package com.olegmng.api;
 
+import com.olegmng.dto.PatientDTO;
 import com.olegmng.entity.Patient;
 import com.olegmng.entity.Report;
 import com.olegmng.service.PatientService;
@@ -35,7 +36,7 @@ public class PatientController {
 
     @PostMapping
     @Operation(summary = "Add new patient", description = "Adding new patient in system")
-    public List<Patient> addPatient(@RequestBody Patient patient) {
+    public List<Patient> addPatient(@RequestBody PatientDTO patient) {
         return patientService.savePatient(patient);
     }
 

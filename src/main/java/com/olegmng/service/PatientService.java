@@ -24,9 +24,9 @@ public class PatientService {
         return patientRepository.findAll();
     }
 
-    public List<Patient> savePatient(Patient patient){
+    public List<Patient> savePatient(PatientDTO patient){
         patientRepository.save(new Patient(
-                patient.getLogin(), patient.getPassword()));
+                patient.getPatient().getLogin(), patient.getPatient().getPassword()));
 
         return patientRepository.findAll();
     }

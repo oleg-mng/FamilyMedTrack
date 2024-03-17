@@ -1,5 +1,6 @@
 package com.olegmng.api;
 
+import com.olegmng.dto.CalendarDTO;
 import com.olegmng.entity.Calendar;
 import com.olegmng.entity.Report;
 import com.olegmng.service.CalendarService;
@@ -23,7 +24,6 @@ public class CalendarController {
     @Autowired
     private CalendarService calendarService;
 
-
     @GetMapping
     @Operation(summary = "Get all calendars", description = "Getting all available calendars in the system")
     public List<Calendar> getAllCalendar() {
@@ -32,7 +32,7 @@ public class CalendarController {
 
     @PostMapping
     @Operation(summary = "Add new calendar", description = "Adding new calendar in system")
-    public List<Calendar> addCalendar(@RequestBody Calendar calendar) {
+    public List<Calendar> addCalendar(@RequestBody CalendarDTO calendar) {
         return calendarService.saveCalendar(calendar);
     }
 

@@ -1,5 +1,6 @@
 package com.olegmng.service;
 
+import com.olegmng.dto.DoctorDTO;
 import com.olegmng.entity.Doctor;
 import com.olegmng.repository.DoctorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,9 +23,10 @@ public class DoctorService {
 
         return doctorRepository.findAll();
     }
-    public List<Doctor> saveDoctor(Doctor doctor){
+    public List<Doctor> saveDoctor(DoctorDTO doctor){
         doctorRepository.save(new Doctor(
-                doctor.getLastName(), doctor.getDirection(), doctor.getExperience(), doctor.getClinic()));
+                doctor.getDoctor().getLastName(), doctor.getDoctor().getDirection(),
+                doctor.getDoctor().getExperience(), doctor.getDoctor().getClinic()));
 
         return doctorRepository.findAll();
     }

@@ -1,5 +1,6 @@
 package com.olegmng.service;
 
+import com.olegmng.dto.CalendarDTO;
 import com.olegmng.entity.Calendar;
 import com.olegmng.repository.CalendarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,9 +24,10 @@ public class CalendarService  {
 
         return calendarRepository.findAll();
     }
-    public List<Calendar> saveCalendar(Calendar calendar){
+    public List<Calendar> saveCalendar(CalendarDTO calendar){
         calendarRepository.save(new Calendar(
-                calendar.getDate(), calendar.getPatient_id(), calendar.getDoctor_id()));
+                calendar.getCalendar().getDate(), calendar.getCalendar().getPatient_id(),
+                calendar.getCalendar().getDoctor_id()));
 
         return calendarRepository.findAll();
     }
