@@ -1,12 +1,12 @@
 package com.olegmng.service;
 
+import com.olegmng.dto.ReportDTO;
 import com.olegmng.entity.Report;
 import com.olegmng.repository.ReportRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,10 +26,10 @@ public class ReportService {
     }
 
 
-    public List<Report> saveReport(Report report) {
+    public List<Report> saveReport(ReportDTO report) {
         reportRepository.save(new Report(
-                report.getType(), report.getDate(), report.getScan(), report.getPatient_id(), report.getDoctor_id()));
-
+                report.getReport().getType(), report.getReport().getDate(), report.getReport().getScan(),
+                report.getReport().getPatient_id(), report.getReport().getDoctor_id()));
         return reportRepository.findAll();
     }
 
@@ -42,7 +42,7 @@ public class ReportService {
         return reportRepository.findAll();
     }
 
-    public List<Report> getReportByPatientId(Long id){
-        return reportRepository.findAllById(Collections.singleton(id));
+    public Optional<Report> getReportByPatientId(Long id){
+        return reportRepository.findById(id);
     }
 }

@@ -30,7 +30,7 @@ public class ReportController {
 
     @PostMapping
     @Operation(summary = "Add new report", description = "Adding new report in system")
-    public List<Report> addReport(@RequestBody Report report) {
+    public List<Report> addReport(@RequestBody ReportDTO report) {
         return reportService.saveReport(report);
     }
 
@@ -46,9 +46,9 @@ public class ReportController {
         return reportService.deleteReportById(id);
     }
 
-    @GetMapping("/patient/{id}")
-    @Operation(summary = "Get reports by patient_id", description = "Getting available reports by patient_id in the system")
-    public List<Report> getReportByPatientId(@PathVariable Long id) {
-        return reportService.getReportByPatientId(id);
-    }
+//    @GetMapping("/patient/{id}")
+//    @Operation(summary = "Get reports by patient_id", description = "Getting available reports by patient_id in the system")
+//    public List<Report> getReportByPatientId(@PathVariable Long id) {
+//        return reportService.getReportByPatientId(id);
+//    }
 }
