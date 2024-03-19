@@ -26,10 +26,6 @@ public class Report {
     @Column(name = "patient_id")
     private Long patient_id;
 
-//    @ManyToOne
-//    @JoinColumn(name="patient_id", referencedColumnName="patient_id", insertable=false, updatable=false)
-//    private Patient patient;
-
     @Column(name = "doctor_id")
     private Long doctor_id;
 

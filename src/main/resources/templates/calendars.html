@@ -2,7 +2,8 @@
 <head>
     <title>Current Calendar</title>
 </head>
-<body>
+
+<body style="background-color:#121212;color:white;font-family: SansSerif">
 <h1>Calendar</h1>
 <table>
     <tr>
@@ -14,8 +15,8 @@
     <tr th:each="calendar: ${calendars}">
         <td th:text="${calendar.id}"></td>
         <td th:text="${calendar.date}"></td>
-        <td th:text="${calendar.patient_id}"></td>
-        <td th:text="${calendar.doctor_id}"></td>
+        <td th:text="${calendar.patient_id}" style="text-align: center;"></td>
+        <td th:text="${calendar.doctor_id}" style="text-align: center;"></td>
     </tr>
 </table>
 </body>

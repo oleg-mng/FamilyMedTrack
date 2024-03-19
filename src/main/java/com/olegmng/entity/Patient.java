@@ -15,12 +15,9 @@ public class Patient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long patient_id;
 
-    @OneToMany(targetEntity = Report.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "patient_id", referencedColumnName = "patient_id")
-    private List<Report> reportList = new ArrayList<>();
-
-//    @OneToMany
-//    @JoinColumn(name="patient_id", referencedColumnName="patient_id")
+    //реализация связи один ко многим для работе с h2db
+//    @OneToMany(targetEntity = Report.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "patient_id", referencedColumnName = "patient_id")
 //    private List<Report> reportList = new ArrayList<>();
 
     @Column(name = "login")

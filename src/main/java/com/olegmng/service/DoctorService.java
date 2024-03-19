@@ -15,12 +15,16 @@ public class DoctorService {
     @Autowired
     private DoctorRepository doctorRepository;
 
-    public List<Doctor> getAllDoctors() {
-        doctorRepository.save(new Doctor("Usikov", "surgery", 11L, "MedCity"));
-        doctorRepository.save(new Doctor("Kirpichnikova", "therapist", 15L, "Family"));
-        doctorRepository.save(new Doctor("Salimov", "ent", 7L, "Medsi"));
-        doctorRepository.save(new Doctor("Polevoi", "dentist", 21L, "MedSwiss"));
+//    public List<Doctor> getAllDoctors() {
+//        doctorRepository.save(new Doctor("Usikov", "surgery", 11L, "MedCity"));
+//        doctorRepository.save(new Doctor("Kirpichnikova", "therapist", 15L, "Family"));
+//        doctorRepository.save(new Doctor("Salimov", "ent", 7L, "Medsi"));
+//        doctorRepository.save(new Doctor("Polevoi", "dentist", 21L, "MedSwiss"));
+//
+//        return doctorRepository.findAll();
+//    }
 
+        public List<Doctor> getAllDoctors() {
         return doctorRepository.findAll();
     }
     public List<Doctor> saveDoctor(DoctorDTO doctor){

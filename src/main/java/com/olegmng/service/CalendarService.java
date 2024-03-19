@@ -16,21 +16,26 @@ public class CalendarService  {
     @Autowired
     private CalendarRepository calendarRepository;
 
-    public List<Calendar> getAllCalendars() {
-        calendarRepository.save(new Calendar(LocalDate.of(2024,04,07), 1L, 4L));
-        calendarRepository.save(new Calendar(LocalDate.of(2024,04,18), 1L, 3L));
-        calendarRepository.save(new Calendar(LocalDate.of(2024,04,28), 1L, 4L));
-        calendarRepository.save(new Calendar(LocalDate.of(2024,05,05), 2L, 2L));
+//    public List<Calendar> getAllCalendars() {
+//        calendarRepository.save(new Calendar(LocalDate.of(2024,04,07), 1L, 4L));
+//        calendarRepository.save(new Calendar(LocalDate.of(2024,04,18), 1L, 3L));
+//        calendarRepository.save(new Calendar(LocalDate.of(2024,04,28), 1L, 4L));
+//        calendarRepository.save(new Calendar(LocalDate.of(2024,05,05), 2L, 2L));
+//
+//        return calendarRepository.findAll();
+//    }
 
+        public List<Calendar> getAllCalendars() {
         return calendarRepository.findAll();
     }
+
     public List<Calendar> saveCalendar(CalendarDTO calendar){
         calendarRepository.save(new Calendar(
                 calendar.getCalendar().getDate(), calendar.getCalendar().getPatient_id(),
                 calendar.getCalendar().getDoctor_id()));
-
         return calendarRepository.findAll();
     }
+
     public Optional<Calendar> getCalendarById(Long id){
         return calendarRepository.findById(id);
     }

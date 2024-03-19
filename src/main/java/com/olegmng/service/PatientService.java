@@ -15,12 +15,16 @@ public class PatientService {
     @Autowired
     private PatientRepository patientRepository;
 
-    public List<Patient> getAllPatients() {
-        patientRepository.save(new Patient("Vika", "p1"));
-        patientRepository.save(new Patient("Anna", "p2"));
-        patientRepository.save(new Patient("Natalia", "p3"));
-        patientRepository.save(new Patient("Oleg", "p4"));
+//    public List<Patient> getAllPatients() {
+//        patientRepository.save(new Patient("Vika", "p1"));
+//        patientRepository.save(new Patient("Anna", "p2"));
+//        patientRepository.save(new Patient("Natalia", "p3"));
+//        patientRepository.save(new Patient("Oleg", "p4"));
+//
+//        return patientRepository.findAll();
+//    }
 
+        public List<Patient> getAllPatients() {
         return patientRepository.findAll();
     }
 

@@ -30,7 +30,6 @@ public class PatientController {
     @GetMapping
     @Operation(summary = "Get all patients", description = "Getting all available patients in the system")
     public List<Patient> getAllPatient() {
-
         return patientService.getAllPatients();
     }
 

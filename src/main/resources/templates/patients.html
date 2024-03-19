@@ -2,7 +2,7 @@
 <head>
     <title>Patients</title>
 </head>
-<body>
+<body style="background-color:#121212;color:white;font-family: SansSerif">
 <h1>Patients:</h1>
 <table>
     <tr>
@@ -10,7 +10,7 @@
         <th>Login</th>
     </tr>
     <tr th:each="patient: ${patients}">
-        <td th:text="${patient.patient_id}"></td>
+        <td th:text="${patient.patient_id}" style="text-align: center;"></td>
         <td th:text="${patient.login}"></td>
     </tr>
 </table>
