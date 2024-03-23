@@ -2,9 +2,12 @@
 ### Java version 17
 ### SpringBoot version 3.2.3
 - H2database (begin develop && testing)
-- PostgreSQL (main db)
+- PostgreSQL (main Database in a container)
 - Docker (docker-compose)
 - Flyway (migration db)
+- Maven                   
+- Thymeleaf
+- Lombok
 
 # Integration with Swagger UI
 `environment`

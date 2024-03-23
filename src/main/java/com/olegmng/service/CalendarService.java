@@ -16,6 +16,7 @@ public class CalendarService  {
     @Autowired
     private CalendarRepository calendarRepository;
 
+//    for h2db
 //    public List<Calendar> getAllCalendars() {
 //        calendarRepository.save(new Calendar(LocalDate.of(2024,04,07), 1L, 4L));
 //        calendarRepository.save(new Calendar(LocalDate.of(2024,04,18), 1L, 3L));

@@ -7,6 +7,12 @@
 #    password:
 #    driver-class-name: org.h2.Driver
 
+family:
+  name:
+    patient
+  password:
+    p3
+
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
@@ -22,6 +28,11 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none
+
+  security:
+    user:
+      name: ${family.name}
+      password: ${family.password}
 
 
 
