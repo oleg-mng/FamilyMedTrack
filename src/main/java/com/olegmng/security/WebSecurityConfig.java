@@ -1,6 +1,9 @@
 package com.olegmng.security;
 
 
+import com.olegmng.entity.Patient;
+import com.olegmng.service.PatientService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
@@ -11,10 +14,16 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig {
+
+    @Autowired
+    private PatientService patientService;
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -25,9 +34,7 @@ public class WebSecurityConfig {
                         .anyRequest().authenticated()
                 )
                 .formLogin(Customizer.withDefaults()
-//                        (form) -> form
-//                        .loginPage("/login")
-//                        .permitAll()
+
                 )
                 .logout((logout) -> logout.permitAll());
 
@@ -35,33 +42,24 @@ public class WebSecurityConfig {
 
     }
 
-
-
     @Bean
     public UserDetailsService userDetailsService() {
-        UserDetails user1 =
-                User.withDefaultPasswordEncoder()
-                        .username("Vika")
-                        .password("p1")
-                        .build();
-        UserDetails user2 =
-                User.withDefaultPasswordEncoder()
-                        .username("Anna")
-                        .password("p2")
-                        .build();
-        UserDetails user3 =
-                User.withDefaultPasswordEncoder()
-                        .username("Natalia")
-                        .password("p3")
-                        .build();
-        UserDetails user4 =
-                User.withDefaultPasswordEncoder()
-                        .username("Oleg")
-                        .password("p4")
-                        .build();
+        List<Patient> patientList = patientService.getAllPatients();
+        List<UserDetails> detailsList = new ArrayList<>();
 
-        return new InMemoryUserDetailsManager(user1, user2, user3, user4);
+        for (int i = 0; i < patientList.size(); i++) {
+
+            UserDetails user =
+                    User.withDefaultPasswordEncoder()
+                            .username(patientList.get(i).getLogin())
+                            .password(patientList.get(i).getPassword())
+                            .build();
+
+            detailsList.add(user);
+
+        }
+        return new InMemoryUserDetailsManager(detailsList);
+
     }
-
 }
 
